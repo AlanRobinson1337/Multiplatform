@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Admin</h2>
+<div class="center-block">
+    <span class="btn btn-group-lg">
+        @Html.ActionLink("View All Users", "ViewAllUsers", "Admin", new { @class = "btn btn-primary btn-lg" })
+        @Html.ActionLink("View All Staff", "ViewAllStaffAsync", "Admin", new { @class = "btn btn-success btn-lg" })
+        @Html.ActionLink("View All Posts", "ViewAllPosts", "Admin", new { @class = "btn btn-warning btn-lg" })
+    </span>
+</div>

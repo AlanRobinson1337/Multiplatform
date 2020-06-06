@@ -9,14 +9,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    @section scripts {
-        @*Scripts.Render("~/bundles/jqueryval")*@
-        @Scripts.Render("~/bundles/bootstrap-datetimepicker")
-    }
 
-    @section styles {
-        @Styles.Render("~/Content/bootstrap-datetimepicker")
-    }
 
     <div class="form-horizontal">
         <h4>EventInputModel</h4>
@@ -102,4 +95,13 @@
         </div>
     </div>
 }
+    @section scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/bootstrap-datetimepicker")
+    }
+
+    @section styles {
+        @Styles.Render("~/Content/bootstrap-datetimepicker")
+    }
+
 

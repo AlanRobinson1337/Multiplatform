@@ -18,7 +18,7 @@ namespace Events.Web
                         "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap-datetimepicker")
-                .Include("~/Scripts/moment/js", "~/Scripts/bootstrap-datetimepicker.js"));
+                .Include("~/Scripts/moment.js", "~/Scripts/bootstrap-datetimepicker.js"));
 
             bundles.Add(new StyleBundle("~/Content/bootstrap-datetimepicker")
                 .Include("~/Content/bootstrap-datetimepicker.min.css"));

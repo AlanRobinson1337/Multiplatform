@@ -80,10 +80,13 @@
   <ItemGroup>
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Category.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="Extensions\NotificationExtensions.cs" />
     <Compile Include="Migrations\DbMigrationsConfig.cs" />
+    <Compile Include="Post.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

@@ -13,6 +13,7 @@ namespace Events.Data
         {
             this.Date = DateTime.Now;
         }
+        [Key]
         public int Id { get; set; }
 
         [Required]
