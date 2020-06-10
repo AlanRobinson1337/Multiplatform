@@ -68,12 +68,12 @@ namespace Events.Web.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
-        
+        //setting full name as required. 
         [Required]
         [Display(Name ="Full Name")]
         public string FullName { get; set; }
 
-        [Required]
+        [Required] //setting the password minimum length to 1
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 1)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]

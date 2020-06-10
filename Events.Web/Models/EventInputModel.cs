@@ -6,6 +6,7 @@ namespace Events.Web.Models
 {
 
     public class EventInputModel
+        //model for creating a new event
     {
         [Required(ErrorMessage = "Event title is required.")]
         [StringLength(200, ErrorMessage = "The {0} must be between {2} and {1} characters long.",

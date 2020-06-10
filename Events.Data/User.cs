@@ -17,30 +17,30 @@ namespace LocalTheatre.Models
     {
 
 
-        //public int userID { get; set; }
-        //[Required]
-        //[Display(Name = "Email Address")]
-        //public string EmailAddress { get; set; }
+    //    //public int userID { get; set; }
+    //    //[Required]
+    //    //[Display(Name = "Email Address")]
+    //    //public string EmailAddress { get; set; }
 
-        public DateTime RegisteredAt { get; set; }
+    //    public DateTime RegisteredAt { get; set; }
 
-        public bool IsSuspended { get; set; }
-
-
-
-        //navigational
-
-        public virtual ICollection<Event> Events { get; set; }
+    //    public bool IsSuspended { get; set; }
 
 
 
-        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> user)
-        {
-            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
-            var userIdentity = await user.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-            // Add custom user claims here
-            return userIdentity;
-        }
+    //    //navigational
+
+    //    public virtual ICollection<Event> Events { get; set; }
+
+
+
+    //    public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> user)
+    //    {
+    //        // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
+    //        var userIdentity = await user.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
+    //        // Add custom user claims here
+    //        return userIdentity;
+    //    }
 
     }
 }

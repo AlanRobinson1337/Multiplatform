@@ -9,11 +9,12 @@ namespace Events.Data
 {
     public class Comment
     {
+        //empty constructor for comment
         public Comment()
         {
             this.Date = DateTime.Now;
         }
-        [Key]
+        //properties
         public int Id { get; set; }
 
         [Required]

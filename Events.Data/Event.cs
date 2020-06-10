@@ -9,13 +9,15 @@ namespace Events.Data
 {
     public class Event
     {
+        //constructor for event
         public Event()
         {
             this.IsPublic = true;
             this.StartDateTime = DateTime.Now;
-            this.Comments = new HashSet<Comment>();
+            this.Comments = new HashSet<Comment>(); //adding relationship with comments
         }
 
+        //class properties
         public int Id { get; set; }
 
         [Required]

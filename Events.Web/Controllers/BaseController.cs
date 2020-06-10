@@ -12,6 +12,7 @@ namespace Events.Web.Controllers
     {
         protected ApplicationDbContext db = new ApplicationDbContext();
 
+        //checks if the current user is in the administrator role
         public bool IsAdmin()
         {
             var currentUserId = this.User.Identity.GetUserId();

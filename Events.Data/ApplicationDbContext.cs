@@ -1,11 +1,11 @@
 ﻿using System.Data.Entity;
-using Events.Web.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Events.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        //adding Events and Comments
         public IDbSet<Event> Events { get; set; }
         public IDbSet<Comment> Comments { get; set; }  
         public ApplicationDbContext()
@@ -18,7 +18,6 @@ namespace Events.Data
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<Post> Posts { get; set; }
-        public System.Data.Entity.DbSet<Category> Categories { get; set; }
+        //public System.Data.Entity.DbSet<Events.Web.Models.EventViewModel> EventViewModels { get; set; }
     }
 }

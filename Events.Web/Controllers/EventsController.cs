@@ -12,7 +12,7 @@ namespace Events.Web.Controllers
 {
     public class EventsController : BaseController
     {
-        [Authorize]
+        [Authorize] //only allows logged in users
         // GET: Events
         public ActionResult Create()
         {

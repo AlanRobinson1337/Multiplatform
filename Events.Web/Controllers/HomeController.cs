@@ -8,13 +8,14 @@ namespace Events.Web.Controllers
 {
     public class HomeController : BaseController
     {
+        //loads all public events
         public ActionResult Index()
         {
             var events = this.db.Events
                 .OrderBy(e => e.StartDateTime)
                 .Where(e => e.IsPublic)
-                .Select(EventViewModel.ViewModel);
-
+                .Select(EventViewModel.ViewModel); //orders events by start time
+            //filters events by start time compared to current date & time
             var upcomingEvents = events.Where(e => e.StartDateTime > DateTime.Now);
             var passedEvents = events.Where(e => e.StartDateTime <= DateTime.Now);
             return View(new UpcomingPassedEventsViewModel()

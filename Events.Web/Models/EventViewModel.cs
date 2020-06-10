@@ -7,7 +7,7 @@ namespace Events.Web.Models
 
 
     public class EventViewModel
-    {
+    {//properties
         public int Id { get; set; }
 
         public string Title { get; set; }
@@ -20,6 +20,7 @@ namespace Events.Web.Models
 
         public string Location { get; set; }
 
+        //loads an Event object into a new EventViewModel object
         public static Expression<Func<Event, EventViewModel>> ViewModel
         {
             get

@@ -19,6 +19,7 @@ namespace Events.Data.Migrations
         }
 
         //seed initial data only if the databse is empty
+        //adds an admin level user and two events
         protected override void Seed(ApplicationDbContext context)
         {
             if (!context.Users.Any())
@@ -35,13 +36,14 @@ namespace Events.Data.Migrations
 
         private void CreateSeveralEvents(ApplicationDbContext context)
         {
+            //creating events to seed the database
             context.Events.Add(new Event()
             {
                 Title = "Pary @ SoftUni",
                 StartDateTime = DateTime.Now.Date.AddDays(5).AddHours(21).AddMinutes(30),
                 Author = context.Users.First()
             });
-            context.Events.Add(new Event()
+            context.Events.Add(new Event() 
             {
                 Title = "Past Event <Anonymous",
                 StartDateTime = DateTime.Now.Date.AddDays(-2).AddHours(10).AddMinutes(30),
@@ -55,7 +57,7 @@ namespace Events.Data.Migrations
         }
 
         private void CreateAdminUser(ApplicationDbContext context, string adminEmail, string adminUserName, string adminFullName, string adminPassword, string adminRole)
-        {
+        {//creating a new user
             var adminUser = new ApplicationUser
             {
                 UserName = adminUserName,
@@ -64,7 +66,7 @@ namespace Events.Data.Migrations
             };
             var userStore = new UserStore<ApplicationUser>(context);
             var userManager = new UserManager<ApplicationUser>(userStore);
-            userManager.PasswordValidator = new PasswordValidator
+            userManager.PasswordValidator = new PasswordValidator //setting the password requirements
             {
                 RequiredLength = 1,
                 RequireNonLetterOrDigit = false,
@@ -72,7 +74,7 @@ namespace Events.Data.Migrations
                 RequireUppercase = false,
                 RequireLowercase = false
             };
-            var userCreateResult = userManager.Create(adminUser, adminPassword);
+            var userCreateResult = userManager.Create(adminUser, adminPassword); //adding the new user
             if (!userCreateResult.Succeeded)
             {
                 throw new Exception(string.Join("; ", userCreateResult.Errors));

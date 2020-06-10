@@ -13,6 +13,7 @@ namespace Events.Web.Models
         public string AuthorId { get; set; }
         public IEnumerable<CommentViewModel> Comments { get; set; }
 
+        //
         public static Expression<Func<Event, EventDetailsViewModel>> ViewModel
         {
             get
@@ -26,6 +27,7 @@ namespace Events.Web.Models
                 };
             }
         }
+
 
     }
 }

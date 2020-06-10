@@ -52,6 +52,7 @@ namespace Events.Web
             };
 
             // Configure validation logic for passwords
+            //setting password requirements to the absolute minimum
             manager.PasswordValidator = new PasswordValidator
             {
                 RequiredLength = 1,

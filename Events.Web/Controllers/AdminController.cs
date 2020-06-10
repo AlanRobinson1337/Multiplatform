@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace Events.Web.Controllers
 {
-    [Authorize(Roles ="Administrator")]
+    [Authorize(Roles = "Administrator")]
     public class AdminController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -82,7 +82,7 @@ namespace Events.Web.Controllers
         }
 
         // GET: Admin/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
             Comment comment = db.Comments.Find(id);
             return View(comment);

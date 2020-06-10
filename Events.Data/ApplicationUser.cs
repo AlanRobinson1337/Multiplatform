@@ -8,8 +8,11 @@ using Microsoft.AspNet.Identity.EntityFramework;
 namespace Events.Data
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
+
+        //inhereting from IdentityUser superclass
     public class ApplicationUser : IdentityUser
     {
+        //required field for fullname with getter and setter
         [Required]
         public string FullName { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
